@@ -2,14 +2,21 @@
   "name": "swanapi",
   "version": "1.0.0",
   "description": "A fully functional restful API written in TS that has at least 1 object type and has endpoints for all the basic CRUD operators in REST. The api should accept the data in json and have instrumentation.",
-  "main": "index.js",
+  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "npm run build && node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.21",
     "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
   }
 }

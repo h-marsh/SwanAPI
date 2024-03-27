@@ -5,7 +5,7 @@ export type Dog = {
   color: string;
   habitat?: string;
   diet: string;
-  size: "small" | "medium" | "large";
+  size: "small" | "medium" | "large" | "extra-large";
 };
 
 export type Poodle = Dog & {

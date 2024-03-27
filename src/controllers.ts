@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "./config.env" });
 
 const url = process.env.DATABASE;
-const dbName = "animals";
+const dbName = "Animals";
 
 const client = new MongoClient(url);
 
@@ -27,7 +27,7 @@ export async function getAllAnimals() {
   }
 }
 
-export async function addNewAnimal() {
+export async function addNewAnimal(data) {
   try {
     await client.connect();
   } finally {

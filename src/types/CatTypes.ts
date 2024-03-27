@@ -1,6 +1,7 @@
 export type Cat = {
   age: number;
   gender?: "male" | "female";
+  coatType: "short" | "medium" | "long";
   color: string;
   habitat?: string;
   diet: string;

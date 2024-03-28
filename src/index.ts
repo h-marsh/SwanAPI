@@ -8,8 +8,9 @@ app.use(express.json());
 
 app.get("/animals", async (req: Request, res: Response) => {
   try {
-    const animals = await getAllAnimals();
-    res.json(animals);
+    console.log(req.body);
+    // const animals = await getAllAnimals();
+    res.json(req.body);
   } catch (error) {
     console.error("Error retrieving animals:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -22,7 +23,7 @@ app.get("/animals/:id", (req: Request, res: Response) => {
 
 app.post("/animals", async (req: Request, res: Response) => {
   try {
-    const animals = await addNewAnimal(req.body);
+    const animals = await addNewAnimal(req, res);
     res.json(animals);
   } catch (error) {
     console.error("Error retrieving animals:", error);

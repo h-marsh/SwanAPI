@@ -1,12 +1,14 @@
 import { Document } from "mongoose";
 
 export interface AnimalDocument extends Document {
+  _id: string;
   name: string;
   age: number;
   species: string;
 }
 
 export interface Dog extends Document {
+  id: number;
   age: number;
   gender?: "male" | "female";
   coatType: string;
@@ -19,6 +21,7 @@ export interface Dog extends Document {
 export interface Cat extends Document {
   age: number;
   gender?: "male" | "female";
+  coatType: "short" | "long";
   color: string;
   habitat?: string;
   diet: string;
@@ -27,6 +30,7 @@ export interface Cat extends Document {
 
 export interface Bird extends Document {
   age: number;
+  gender?: "male" | "female";
   color: string;
   habitat: string;
   diet: string;
